@@ -12,7 +12,7 @@ Clone this repository with git clone https://github.com/Victoloporsche/Market_Pr
 With Virtual Environent, use : a) pip install virtualenv b) cd path-to-the-cloned-repository c) virtualenv myenv d) source myenv/bin/activate e) pip install -r requirements.txt
 With Conda Environment, use: a) cd path-to-the-cloned-repository b) conda create --name myenv c) source activate myenv d) pip install -r requirements.txt
 
-# About This Project (from Kaggle : https://www.kaggle.com/c/jane-street-market-prediction)
+# About This Project : https://www.kaggle.com/c/jane-street-market-prediction
 
 “Buy low, sell high.” It sounds so easy….
 
