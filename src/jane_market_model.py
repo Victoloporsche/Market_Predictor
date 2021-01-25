@@ -2,6 +2,7 @@ from model_prediction import ModelPrediction
 from processed_data import ProcessedData
 from cross_validation import CrossValidation
 from model_optimization import ModelOptimization
+from torch_model import TorchModel
 
 class JaneMarketModel:
     def __init__(self, train, test, id_column, y_column_name, num_of_features_to_select=138):
@@ -23,6 +24,8 @@ class JaneMarketModel:
                                   num_of_features_to_select)
         self.model_optim = ModelOptimization(train, test, self.id_column, self.y_column_name,
                                              num_of_features_to_select)
+        self.torch_nn = TorchModel(train, test, self.id_column, self.y_column_name,
+                                             num_of_features_to_select)
 
     def kfold_cross_validation(self):
         return self.cv.kfold_cross_validation()
@@ -35,3 +38,9 @@ class JaneMarketModel:
 
     def model_prediction(self):
         return self.model_predict.predict_output()
+
+    def train_model_with_pytorch(self):
+        return self.torch_nn.train_model_with_torch()
+
+    def predict_model_with_pytorch(self):
+        return self.torch_nn.model_prediction_pytorch()
