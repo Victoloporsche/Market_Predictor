@@ -11,7 +11,16 @@ if __name__ == '__main__':
     main_model.show_kfold_cross_validation_result()
     main_model.model_optimization_training()
     prediction_df = main_model.model_prediction()
+
+    main_model.train_model_with_pytorch()
+    predictions_df_torch_model = main_model.predict_model_with_pytorch()
+
     prediction_df.to_csv('../output/submission.csv', index=None)
+    predictions_df_torch_model.to_csv('../output/submission_pytorch.csv', index=None)
+
+
+
+
 
 
 
